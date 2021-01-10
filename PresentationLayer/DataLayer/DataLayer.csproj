@@ -46,7 +46,9 @@
     <Compile Include="Models\Offense.cs" />
     <Compile Include="Models\Policeman.cs" />
     <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="OffenseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PolicemanRepository.cs" />
     <Compile Include="VehicleRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
