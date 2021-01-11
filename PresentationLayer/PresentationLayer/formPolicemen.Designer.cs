@@ -1,4 +1,4 @@
-﻿namespace Policijska_stanica
+﻿namespace PresentationLayer
 {
     partial class frmPolicemen
     {
