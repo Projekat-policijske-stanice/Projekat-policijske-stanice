@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98B437CD-C1DF-4FD8-9BF0-E2BB6834DFE6}</ProjectGuid>
+    <ProjectGuid>{EC4161C2-C5EF-4346-AC20-C37964A96386}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusinessLayer</RootNamespace>
-    <AssemblyName>BusinessLayer</AssemblyName>
+    <RootNamespace>Shared</RootNamespace>
+    <AssemblyName>Shared</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,20 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OffenseBusiness.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Interfaces\Business\IOffenseBusiness.cs" />
+    <Compile Include="Interfaces\Business\IPolicemanBusiness.cs" />
+    <Compile Include="Interfaces\Business\IVehicleBusiness.cs" />
+    <Compile Include="Interfaces\Repository\IOffenseRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPolicemanRepository.cs" />
+    <Compile Include="Interfaces\Repository\IVehicleRepository.cs" />
+    <Compile Include="Models\Offense.cs" />
+    <Compile Include="Models\Policeman.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PolicemanBusiness.cs" />
-    <Compile Include="VehicleBusiness.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
-      <Project>{456a5bf0-d253-4766-bd9b-f1115963e90f}</Project>
-      <Name>DataLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Shared\Shared.csproj">
-      <Project>{ec4161c2-c5ef-4346-ac20-c37964a96386}</Project>
-      <Name>Shared</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

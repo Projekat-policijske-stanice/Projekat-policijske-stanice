@@ -1,5 +1,6 @@
 ﻿using DataLayer;
-using DataLayer.Models;
+using Shared.Interfaces.Business;
+using Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class VehicleBusiness
+    public class VehicleBusiness : IVehicleBusiness
     {
 
         private readonly VehicleRepository vehicleRepository;
@@ -57,7 +58,5 @@ namespace BusinessLayer
             }
             return false;
         }
-
-
     }
 }
