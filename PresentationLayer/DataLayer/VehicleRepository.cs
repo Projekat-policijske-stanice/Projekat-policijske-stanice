@@ -1,4 +1,7 @@
 ﻿using DataLayer.Models;
+using Shared;
+using Shared.Interfaces.Repository;
+using Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,79 +13,48 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-   public class VehicleRepository
+    public class VehicleRepository : IVehicleRepository
     {
         public List<Vehicle> GetAllVehicles()
         {
             List<Vehicle> vehicles = new List<Vehicle>();
-            using (SqlConnection conn = new SqlConnection(Constants.connectionString))
+
+            SqlDataReader sqlDataReader = DBConnection.GetData("SELECT * FROM Vehicles;");
+
+            while (sqlDataReader.Read())
             {
-                SqlCommand sqlCommand = new SqlCommand();
-                sqlCommand.CommandText = "SELECT * FROM Vehicles;";
-                sqlCommand.Connection = conn;
+                Vehicle v = new Vehicle();
+                v.Id = sqlDataReader.GetInt32(0);
+                v.Name = sqlDataReader.GetString(1);
+                v.Type = sqlDataReader.GetString(2);
+                v.Consumption = sqlDataReader.GetDecimal(3);
+                v.Correctness = sqlDataReader.GetString(4);
+                v.Condition = sqlDataReader.GetString(5);
 
-                conn.Open();
-
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
-                
-                while (sqlDataReader.Read())
-                {
-                    Vehicle v = new Vehicle();
-                    v.Id = sqlDataReader.GetInt32(0);
-                    v.Name = sqlDataReader.GetString(1);
-                    v.Type = sqlDataReader.GetString(2);
-                    v.Consumption = sqlDataReader.GetDecimal(3);
-                    v.Correctness= sqlDataReader.GetString(4);
-                    v.Condition = sqlDataReader.GetString(5);
-
-                    vehicles.Add(v);
-                }
-                return vehicles;
+                vehicles.Add(v);
             }
+            DBConnection.CloseConnection();
+            return vehicles;
         }
         public int InsertVehicle(Vehicle v)
         {
-            using (SqlConnection conn = new SqlConnection(Constants.connectionString))
-            {
-                SqlCommand sqlCommand = new SqlCommand();
-
-                sqlCommand.CommandText = string.Format("INSERT INTO Vehicles VALUES ('{0}','{1}','{2}','{3}','{4}');", v.Name, v.Type, v.Consumption, v.Correctness, v.Condition);
-                sqlCommand.Connection = conn;
-
-                conn.Open();
-
-                return sqlCommand.ExecuteNonQuery();
-            }
+            var result = DBConnection.EditData(string.Format("INSERT INTO Vehicles VALUES ('{0}','{1}','{2}','{3}','{4}');", v.Name, v.Type, v.Consumption, v.Correctness, v.Condition));
+            DBConnection.CloseConnection();
+            return result;
         }
         public int UpdateVehicle(Vehicle v)
         {
-            using (SqlConnection conn = new SqlConnection(Constants.connectionString))
-            {
-                SqlCommand sqlCommand = new SqlCommand();
-
-                sqlCommand.CommandText = string.Format("UPDATE Vehicles SET Name = '{0}', Type = '{1}', Consumption = '{2}', Correctness = '{3}', Condition = '{4}' WHERE Id = '{5}';", v.Name, v.Type, v.Consumption, v.Correctness, v.Condition, v.Id);
-                sqlCommand.Connection = conn;
-
-                conn.Open();
-
-                return sqlCommand.ExecuteNonQuery();
-            }
+            var result = DBConnection.EditData(string.Format("UPDATE Vehicles SET Name = '{0}', Type = '{1}', Consumption = '{2}', Correctness = '{3}', Condition = '{4}' WHERE Id = '{5}';", v.Name, v.Type, v.Consumption, v.Correctness, v.Condition, v.Id));
+            DBConnection.CloseConnection();
+            return result;
         }
-        
+
         public int DeleteVehicle(int Id)
         {
-            using (SqlConnection conn = new SqlConnection(Constants.connectionString))
-            {
-                SqlCommand sqlCommand = new SqlCommand();
-
-                sqlCommand.CommandText = string.Format("DELETE FROM Vehicles WHERE Id = '{0}';", Id);
-                sqlCommand.Connection = conn;
-
-                conn.Open();
-
-                return sqlCommand.ExecuteNonQuery();
-            }
+            var result = DBConnection.EditData(string.Format("DELETE FROM Vehicles WHERE Id = '{0}';", Id));
+            DBConnection.CloseConnection();
+            return result;
         }
-    }
+    }   
 }
+
