@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Shared.Interfaces.Business;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class OffenseBusiness
+    public class OffenseBusiness : IOffenseBusiness
     {
         private readonly OffenseRepository offenseRepository;
 
