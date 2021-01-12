@@ -184,9 +184,9 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.Silver;
+            this.buttonDelete.BackColor = System.Drawing.Color.White;
             this.buttonDelete.FlatAppearance.BorderSize = 0;
-            this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.Black;
@@ -265,7 +265,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "formOffenses";
-            this.Text = "Prekršaj";
+            this.Text = "Prekrsaj";
             this.Load += new System.EventHandler(this.formOffenses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOffense)).EndInit();

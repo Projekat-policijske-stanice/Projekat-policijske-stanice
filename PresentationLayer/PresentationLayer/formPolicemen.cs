@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
-using DataLayer.Models;
+using Shared.Interfaces.Business;
+using Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,13 +13,13 @@ using System.Windows.Forms;
 
 namespace PresentationLayer
 {
-    public partial class frmPolicemen : Form
+    public partial class formPolicemen : Form
     {
-        private readonly PolicemanBusiness policemanBusiness;
-        public frmPolicemen()
+        private readonly IPolicemanBusiness policemanBusiness;
+        public formPolicemen(IPolicemanBusiness _policemanBusiness)
         {
             InitializeComponent();
-            this.policemanBusiness = new PolicemanBusiness();
+            this.policemanBusiness = _policemanBusiness;
         }
         private void frmPolicemen_Load(object sender, EventArgs e)
         {

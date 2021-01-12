@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer
 {
-    partial class frmPolicemen
+    partial class formPolicemen
     {
         /// <summary>
         /// Required designer variable.
@@ -179,8 +179,9 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonClear.BackColor = System.Drawing.Color.White;
             this.buttonClear.FlatAppearance.BorderSize = 0;
+            this.buttonClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClear.ForeColor = System.Drawing.Color.Black;
@@ -194,9 +195,9 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.BackColor = System.Drawing.Color.Silver;
+            this.buttonUpdate.BackColor = System.Drawing.Color.White;
             this.buttonUpdate.FlatAppearance.BorderSize = 0;
-            this.buttonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.Black;
@@ -273,7 +274,7 @@
             this.comboBoxStatus.Size = new System.Drawing.Size(165, 21);
             this.comboBoxStatus.TabIndex = 6;
             // 
-            // frmPolicemen
+            // formPolicemen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -301,7 +302,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmPolicemen";
+            this.Name = "formPolicemen";
             this.Text = "Policajci";
             this.Load += new System.EventHandler(this.frmPolicemen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPolicemen)).EndInit();
