@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
-using DataLayer.Models;
+using Shared.Interfaces.Business;
+using Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +15,16 @@ namespace PresentationLayer
 {
     public partial class formOffenses : Form
     {
-        private readonly OffenseBusiness offenseBusiness;
-        private readonly PolicemanBusiness policemanBusiness;
-        private readonly VehicleBusiness vehicleBusiness;
+        private readonly IOffenseBusiness offenseBusiness;
+        private readonly IPolicemanBusiness policemanBusiness;
+        private readonly IVehicleBusiness vehicleBusiness;
         
-        public formOffenses()
+        public formOffenses(IPolicemanBusiness _policemanBusiness, IVehicleBusiness _vehicleBusiness, IOffenseBusiness _offenseBusiness)
         {
             InitializeComponent();
-            this.offenseBusiness = new OffenseBusiness();
-            this.policemanBusiness = new PolicemanBusiness();
-            this.vehicleBusiness = new VehicleBusiness();
+            this.offenseBusiness = _offenseBusiness;
+            this.policemanBusiness = _policemanBusiness;
+            this.vehicleBusiness = _vehicleBusiness;
         }
 
         private void formOffenses_Load(object sender, EventArgs e)

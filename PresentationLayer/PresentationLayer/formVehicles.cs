@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
-using DataLayer.Models;
+using Shared.Interfaces.Business;
+using Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,11 @@ namespace PresentationLayer
 {
     public partial class formVehicles : Form
     {
-        private readonly VehicleBusiness vehicleBusiness;
-        public formVehicles()
+        private readonly IVehicleBusiness vehicleBusiness;
+        public formVehicles(IVehicleBusiness _vehicleBusiness)
         {
             InitializeComponent();
-            this.vehicleBusiness = new VehicleBusiness();
+            this.vehicleBusiness = _vehicleBusiness;
         }
         private void formVehicles_Load(object sender, EventArgs e)
         {

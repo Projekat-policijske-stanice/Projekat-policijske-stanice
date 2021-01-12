@@ -154,8 +154,9 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonClear.BackColor = System.Drawing.Color.White;
             this.buttonClear.FlatAppearance.BorderSize = 0;
+            this.buttonClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClear.ForeColor = System.Drawing.Color.Black;
@@ -169,9 +170,9 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.BackColor = System.Drawing.Color.Silver;
+            this.buttonUpdate.BackColor = System.Drawing.Color.White;
             this.buttonUpdate.FlatAppearance.BorderSize = 0;
-            this.buttonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.Black;
@@ -272,7 +273,6 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "formVehicles";
             this.Text = "Vozila";
             this.Load += new System.EventHandler(this.formVehicles_Load);
