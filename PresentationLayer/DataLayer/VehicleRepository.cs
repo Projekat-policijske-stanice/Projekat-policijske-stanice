@@ -1,5 +1,4 @@
-﻿using DataLayer.Models;
-using Shared;
+﻿using Shared;
 using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
