@@ -23,6 +23,10 @@ namespace PresentationLayer
         }
         private void frmPolicemen_Load(object sender, EventArgs e)
         {
+            RefreshData();
+        }
+        private void RefreshData() 
+        {
             List<Policeman> policemanList = this.policemanBusiness.GetAllPolicemen();
             dataGridPolicemen.DataSource = policemanList;
         }
@@ -43,8 +47,7 @@ namespace PresentationLayer
                 {
                     MessageBox.Show("Uspesno izmenjen policajac");
                     ClearTextBox();
-                    List<Policeman> policemanList = this.policemanBusiness.GetAllPolicemen();
-                    dataGridPolicemen.DataSource = policemanList;
+                    RefreshData();
                 }
                 else
                 {
@@ -81,7 +84,7 @@ namespace PresentationLayer
 
         private void buttondAdd_Click(object sender, EventArgs e)
         {
-            if (textBoxId.Text != "" && textBoxName.Text != "" && textBoxSurname.Text != "" && textBoxJMBG.Text != "" && textBoxShift.Text != "" && comboBoxStatus.Text != "" && comboBoxGender.Text != "")
+            if (textBoxName.Text != "" && textBoxSurname.Text != "" && textBoxJMBG.Text != "" && textBoxShift.Text != "" && comboBoxStatus.Text != "" && comboBoxGender.Text != "")
             {
                 Policeman p = new Policeman();
                 p.Name = textBoxName.Text;
@@ -95,8 +98,7 @@ namespace PresentationLayer
                 {
                     MessageBox.Show("Uspesno dodat policajac");
                     ClearTextBox();
-                    List<Policeman> policemanList = this.policemanBusiness.GetAllPolicemen();
-                    dataGridPolicemen.DataSource = policemanList;
+                    RefreshData();
                 }
                 else
                 {
@@ -115,8 +117,7 @@ namespace PresentationLayer
                 {
                     MessageBox.Show("Uspesno obrisan policajac");
                     ClearTextBox();
-                    List<Policeman> policemanList = this.policemanBusiness.GetAllPolicemen();
-                    dataGridPolicemen.DataSource = policemanList;
+                    RefreshData();
                 }
                 else
                 {
