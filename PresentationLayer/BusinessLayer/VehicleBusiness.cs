@@ -1,5 +1,6 @@
 ﻿using DataLayer;
 using Shared.Interfaces.Business;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,11 @@ namespace BusinessLayer
     public class VehicleBusiness : IVehicleBusiness
     {
 
-        private readonly VehicleRepository vehicleRepository;
+        private readonly IVehicleRepository vehicleRepository;
 
-        public VehicleBusiness()
+        public VehicleBusiness(IVehicleRepository _vehicleRepository)
         {
-            this.vehicleRepository = new VehicleRepository();
+            this.vehicleRepository = _vehicleRepository;
         }
 
         public List<Vehicle> GetAllVehicles()

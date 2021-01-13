@@ -1,5 +1,6 @@
 ﻿using DataLayer;
 using Shared.Interfaces.Business;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace BusinessLayer
 {
     public class PolicemanBusiness : IPolicemanBusiness
     {
-        private readonly PolicemanRepository policemanRepository;
+        private readonly IPolicemanRepository policemanRepository;
 
-        public PolicemanBusiness()
+        public PolicemanBusiness(IPolicemanRepository _policemanRepository)
         {
-            this.policemanRepository = new PolicemanRepository();
+            this.policemanRepository = _policemanRepository;
         }
 
         public List<Policeman> GetAllPolicemen()
