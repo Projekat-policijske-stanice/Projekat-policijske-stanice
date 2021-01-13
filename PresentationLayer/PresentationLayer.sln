@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{EC4161C2-C5EF-4346-AC20-C37964A96386}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{80635918-474E-4A90-8CF5-E2ADCC1FC167}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayerTests", "BusinessLayerTests\BusinessLayerTests.csproj", "{8EE77D6F-0D64-4B4E-9652-3C75BFB233D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,21 @@ Global
 		{EC4161C2-C5EF-4346-AC20-C37964A96386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC4161C2-C5EF-4346-AC20-C37964A96386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC4161C2-C5EF-4346-AC20-C37964A96386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE77D6F-0D64-4B4E-9652-3C75BFB233D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE77D6F-0D64-4B4E-9652-3C75BFB233D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE77D6F-0D64-4B4E-9652-3C75BFB233D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE77D6F-0D64-4B4E-9652-3C75BFB233D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A5018EC-BA60-4124-A327-516F752E72BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A5018EC-BA60-4124-A327-516F752E72BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A5018EC-BA60-4124-A327-516F752E72BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A5018EC-BA60-4124-A327-516F752E72BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EE77D6F-0D64-4B4E-9652-3C75BFB233D3} = {80635918-474E-4A90-8CF5-E2ADCC1FC167}
+		{3A5018EC-BA60-4124-A327-516F752E72BD} = {80635918-474E-4A90-8CF5-E2ADCC1FC167}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE5F1F46-3DB9-4BFF-9DC5-22711EAB045A}
