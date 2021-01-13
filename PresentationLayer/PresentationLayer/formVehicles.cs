@@ -55,7 +55,7 @@ namespace PresentationLayer
         }
         private void buttondAdd_Click(object sender, EventArgs e)
         {
-            if (textBoxId.Text != "" && textBoxName.Text != "" && textBoxType.Text != "" && textBoxConsumption.Text != "" && textBoxCorrectness.Text != "" && comboBoxCondition.Text != "")
+            if (textBoxName.Text != "" && textBoxType.Text != "" && textBoxConsumption.Text != "" && textBoxCorrectness.Text != "" && comboBoxCondition.Text != "")
             {
                 Vehicle v = new Vehicle();
                 v.Name = textBoxName.Text;
